@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register page
+{% endblock %}
+
+{% block content %}
+
+  <div class="flex justify-center items-center flex-col text-black border-inherit h-screen">
+    <div class="w-[384px] py-3 bg-slate-100 shadow-inherit rounded-md">
+        <div class="flex justify-center items-center flex-col">
+            <span class="text-5xl font-semibold"><a href="{%url 'login'%}"><i class="fa-solid fa-user"></i></a></span>
+            <h1 class="m-auto text-3xl font-semibold">Registration</h1>
+        </div>
+
+        <form method="post">
+            {%csrf_token%}
+            <div class="login-box py-2 flex justify-center items-center flex-col">
+                <div class="usrname my-2 block w-full px-2">
+                    <label for="" class="text-gray-700 text-xl mb-2">Username</label>
+                    {{form.username}}
+                </div>
+                <div class="usrname my-2 block w-full px-2">
+                    <label for="" class="text-gray-700 text-xl">Email</label>
+                    {{form.email}}
+                </div>
+                <div class="pasrd my-2 block w-full px-2">
+                    <label for="" class="text-gray-700 text-xl">Password</label>
+                    {{form.password1}}
+                </div>
+                <div class="pasrd my-2 block w-full px-2">
+                    <label for="" class="text-gray-700 text-xl">Confirm Password</label>
+                    {{form.password2}}
+                </div>
+            </div>
+            <div class="mt-3" style="text-align:center;">
+                <button class="bg-slate-800 text-slate-100 py-1 rounded-md  px-2" style="width: 95%;"  type="submit">Register</button>
+            </div>
+        </form>
+        
+    </div>
+    
+
+    
+  </div>
+    
+{% endblock %}
